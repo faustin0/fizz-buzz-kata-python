@@ -50,3 +50,17 @@ class TestFizzBuzz(TestCase):
         contains_or_is_divisible_by_five = fizzbuzz.contains_or_is_divisible_by(5)
         self.assertFalse(contains_or_is_divisible_by_five(4), msg="expected 4 to be not divisible by 5")
         self.assertFalse(contains_or_is_divisible_by_five(12))
+
+    def test_should_return_fizz(self):
+        contains_or_is_divisible_by_three = fizzbuzz.contains_or_is_divisible_by(3)
+        sut = fizzbuzz.FizzBuzz()
+        sut.when(contains_or_is_divisible_by_three, "fizz")
+        self.assertEqual(sut.compute(3), "fizz", msg="expected to compute fizz when is divisible by 3")
+        self.assertEqual(sut.compute(13), "fizz", msg="expected to compute fizz when contains 3")
+
+    def test_should_return_buzz(self):
+        contains_or_is_divisible_by_five = fizzbuzz.contains_or_is_divisible_by(5)
+        sut = fizzbuzz.FizzBuzz()
+        sut.when(contains_or_is_divisible_by_five, "buzz")
+        self.assertEqual(sut.compute(10), "buzz", msg="expected to compute buzz when is divisible by 5")
+        self.assertEqual(sut.compute(51), "buzz", msg="expected to compute buzz when contains 5")
