@@ -44,4 +44,7 @@ if __name__ == '__main__':
         (contains_or_is_divisible_by(5), "Buzz")
     ]
     fizz_buzz = FizzBuzz(actions)
-    print([fizz_buzz.compute(number) for number in range(1, 16)])
+    [
+        print(f'{number} => {fizz_buzz.compute(number)}')
+        for number in range(1, 21)
+    ]
