@@ -21,17 +21,11 @@ class FizzBuzz(object):
 
 
 def is_divisible_by(divisor):
-    def inner(dividend):
-        return dividend % divisor == 0
-
-    return inner
+    return lambda dividend: dividend % divisor == 0
 
 
 def contains_number(to_search):
-    def inner(searched):
-        return str(to_search) in str(searched)
-
-    return inner
+    return lambda searched: str(to_search) in str(searched)
 
 
 def contains_or_is_divisible_by(number):
