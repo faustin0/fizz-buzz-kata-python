@@ -34,12 +34,12 @@ class TestFizzBuzz(TestCase):
         self.assertFalse(contains_five(11011))
 
     def test_should_be_divisible_by(self):
-        divisible_by_five = fizzbuzz.is_divisible_by(3)
-        self.assertTrue(divisible_by_five(15))
+        divisible_by_three = fizzbuzz.is_divisible_by(3)
+        self.assertTrue(divisible_by_three(15))
 
     def test_should_not_be_divisible_by(self):
-        divisible_by_five = fizzbuzz.is_divisible_by(3)
-        self.assertFalse(divisible_by_five(17))
+        divisible_by_three = fizzbuzz.is_divisible_by(3)
+        self.assertFalse(divisible_by_three(17))
 
     def test_should_contains_and_be_divisible_by(self):
         contains_or_is_divisible_by_five = fizzbuzz.contains_or_is_divisible_by(5)
