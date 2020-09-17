@@ -6,22 +6,9 @@ from fizzbuzz import FizzBuzz
 
 class TestFizzBuzz(TestCase):
 
-    def mocked_predicate(self, _):
-        return True
-
-    def test_should_register_action(self):
-        actions = [
-            (self.mocked_predicate, "Foo")
-        ]
-        fizz_buzz = FizzBuzz()
-        fizz_buzz.when(self.mocked_predicate, "Foo")
-        self.assertEqual(fizz_buzz._actions, actions)
-
     def test_should_return_Foo_when_true_condition(self):
-        actions = [
-            (self.mocked_predicate, "Foo")
-        ]
-        fizz_buzz = FizzBuzz(actions)
+        fizz_buzz = FizzBuzz()
+        fizz_buzz.when(lambda x: True, "Foo")
 
         self.assertEqual("Foo", fizz_buzz.compute(3))
 
