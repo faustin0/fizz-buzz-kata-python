@@ -51,3 +51,11 @@ class TestFizzBuzz(TestCase):
         sut.when(contains_or_is_divisible_by_five, "buzz")
         self.assertEqual(sut.compute(10), "buzz", msg="expected to compute buzz when is divisible by 5")
         self.assertEqual(sut.compute(51), "buzz", msg="expected to compute buzz when contains 5")
+
+    def test_should_return_fizz_buzz_razz(self):
+        sut = fizzbuzz.FizzBuzz()
+        sut.when(fizzbuzz.contains_or_is_divisible_by(3), "Fizz")
+        sut.when(fizzbuzz.contains_or_is_divisible_by(5), "Buzz")
+        sut.when(fizzbuzz.contains_or_is_divisible_by(7), "Razz")
+
+        self.assertEqual(sut.compute(3*5*7), "FizzBuzzRazz")

@@ -6,8 +6,8 @@ class FizzBuzz(object):
     def __init__(self):
         self._actions_map = {}
 
-    def when(self, condition: Callable[[Any], bool], action):
-        self._actions_map[condition] = action
+    def when(self, condition: Callable[[Any], bool], word: str):
+        self._actions_map[condition] = word
 
     def compute(self, number: int) -> str:
         words = [
